@@ -4,3 +4,6 @@ pytest-cov
 selenium
 requests
 robotframework
+robotframework-seleniumlibrary
+robotframework-requests
+robotframework-datadriver
