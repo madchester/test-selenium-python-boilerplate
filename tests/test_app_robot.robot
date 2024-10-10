@@ -5,13 +5,13 @@ Documentation     This is a resource file, that can contain variables and keywor
 Library           SeleniumLibrary
 
 *** Variables ***
-${SERVER}         services-test.airnavigation.aero
+${SERVER}         
 ${BROWSER}        Firefox
 ${DELAY}          0
 ${VALID USER}     demo
 ${VALID PASSWORD}    mode
-${INDEX URL}      https://${SERVER}/en/
-${DISCOVER URL}    https://${SERVER}/en/anp.html
+${INDEX URL}      https://${SERVER}/
+${DISCOVER URL}    https://${SERVER}/
 
 *** Keywords ***
 Go to Website

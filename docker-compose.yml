@@ -46,6 +46,7 @@ services:
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
   selenium-hub:
     environment:
+        - SE_ENABLE_TRACING=false
         - SE_NODE_SESSION_TIMEOUT=999999999
     image: selenium/hub:latest
     container_name: selenium-hub
@@ -57,6 +58,8 @@ services:
     image: selenium/standalone-firefox:latest
     environment:
       - SE_VNC_NO_PASSWORD=1
+      - SE_NODE_SESSION_TIMEOUT=999999999
+      - SE_ENABLE_TRACING=false
     ports:
       - "4445:4444" # Selenium
       - "7900:7900" # VNC server
