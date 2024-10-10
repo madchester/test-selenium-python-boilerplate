@@ -5,9 +5,8 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /test-automation
 
 ARG DEBIAN_FRONTEND=noninteractive
-RUN apt update \
-    && apt install gettext netcat-traditional bash libgdal-dev libproj-dev proj-bin python3-sphinx libopenal1 libgl1 gcc -y
-COPY requirements.txt /test-automation/requirements.txt
-RUN pip install -r /test-automation/requirements.txt
-
-ENTRYPOINT [ "python"]
+RUN apt update
+COPY requirements.txt requirements.txt
+RUN pip install  --no-cache-dir -r requirements.txt
+COPY . .
+ENTRYPOINT ["python"]

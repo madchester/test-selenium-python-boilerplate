@@ -1,8 +1,8 @@
 version: '3.7'
 
 services:
-  worker:
-    build: '.'
+  web:
+    build: .
   # chrome:
   #   image: selenium/node-chrome:4.18.1-20240224
   #   shm_size: 2gb
@@ -49,7 +49,7 @@ services:
   #   ports:
   #     - "6902:5900"
   selenium: # Need to run only on dev mode
-    image: selenium/standalone-firefox:4.8.2-20230325
+    image: selenium/standalone-firefox:latest 
     ports:
       - "4444:4444" # Selenium
       - "7900:7900" # VNC server
