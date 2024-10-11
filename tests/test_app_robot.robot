@@ -3,6 +3,7 @@ Documentation     This is a resource file, that can contain variables and keywor
 ...               Keywords defined here can be used where this Keywords.resource in loaded.
 
 Library           SeleniumLibrary
+# Library           Remote    http://localhost:4445    1 minute    AS    selenium-hub
 
 *** Variables ***
 ${SERVER}         
@@ -10,13 +11,15 @@ ${BROWSER}        Firefox
 ${DELAY}          0
 ${VALID USER}     demo
 ${VALID PASSWORD}    mode
-${INDEX URL}      https://${SERVER}/
-${DISCOVER URL}    https://${SERVER}/
+${HOST NAME}    https://${SERVER}/
+${INDEX URL}      ${HOST NAME}en/
+${DISCOVER URL}    https://${SERVER}/en/anp.html
+${REMOTE URL}    http://localhost:4445/wd/hub
 
 *** Keywords ***
 Go to Website
-    Open Browser    ${INDEX URL}    ${BROWSER}
-    Maximize Browser Window
+    Open Browser    url=${HOST NAME}    browser=${BROWSER}    remote_url=${REMOTE URL}    desired_capabilities=browser:firefox
+    # Maximize Browser Window
     Set Selenium Speed    ${DELAY}
 
 *** Test Cases ***
