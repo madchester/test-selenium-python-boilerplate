@@ -13,7 +13,7 @@ ${VALID USER}     demo
 ${VALID PASSWORD}    mode
 ${HOST NAME}    https://${SERVER}/
 ${INDEX URL}      ${HOST NAME}en/
-${DISCOVER URL}    https://${SERVER}/en/anp.html
+${DISCOVER URL}    https://${SERVER}/
 ${REMOTE URL}    http://localhost:4445/wd/hub
 
 *** Keywords ***
@@ -27,6 +27,6 @@ Go to Website
 Visit Website
     Go to Website
     Location Should Be    ${INDEX URL}
-    Title Should Be    Air Navigation
+    Title Should Be    Sample Title
     [Teardown]    Close Browser
 
