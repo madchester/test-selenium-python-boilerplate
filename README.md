@@ -29,8 +29,3 @@
 
 https://selenium-python.readthedocs.io/
 https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html
-
-## Task
-
-1. Create test suites for login page in services-test 
-Note: Ingore social media logins
